@@ -27,3 +27,29 @@
       IdentityFile ~/.ssh/account2_rsa
       User account2
 
+**3. 使用第二个账号，并通过ssh端口clone程序包`foo-package`**
+
+    git clone git@account2:account2/foo-package.git
+
+**4. 配置foo-package**
+
+    cd foo-package
+    git config --local --add user.name account2
+    git config --local --add user.email account2@github.com
+
+**5. 提交代码到第二个账号**
+
+    echo "foo test code" > foo.txt
+    git add foo.txt
+    git commmit -m "Add foo.txt"
+    git push
+
+### 可能的异常：
+
+以上第5步提交代码时有可能会碰到SSH key授权失败的异常，据说这是一个`Famous ssh agent issue`。可清除ssh-agent后重新添加密钥。
+
+    ssh-add -d ~\\.ssh\\github_rsa
+    ssh-add -d ~\\.ssh\\account2_rsa
+
+    ssh-add ~\\.ssh\\github_rsa
+    ssh-add ~\\.ssh\\account2_rsa
