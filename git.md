@@ -37,6 +37,8 @@
     git config --local --add user.name account2
     git config --local --add user.email account2@github.com
 
+这里`user.email`的设定关联github的注册账号，如果设置为未注册过的账号，使用第二个账号提交到github时，提交者将不能链接到您的账号。
+
 **5. 提交代码到第二个账号**
 
     echo "foo test code" > foo.txt
