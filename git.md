@@ -1,5 +1,7 @@
 # 使用多个github账号
 
+[Ref](http://www.jianshu.com/p/0ad3d88c51f4)
+
 ## windows篇
 
 ### 第一个账号，此例使用github desktop，因此按照git desk的默认操作安装完毕即可。(假设账号为account1@github.com)
