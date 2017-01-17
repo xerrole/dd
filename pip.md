@@ -38,6 +38,15 @@ python分布式任务队列，可配合django或者RabbitMq使用。配合django
 
     	pip install git+https://github.com/celery/django-celery#egg=master
 
+## demjson
+
+可直接转换javascript的object到python的dict的包。
+
+        import demjson
+
+        js_obj = '{x: 1, y: 2, z: 3}'
+        py_obj = demjson.decode(js_obj)
+
 # 新奇用法
 
 ## pip 源配置
