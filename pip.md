@@ -101,6 +101,12 @@ windows下`%HOMEPATH%\.ipython\profile_default\startup\start.py`
 
 # 安装解惑
 
+## Visual C++ for Python 2.7
+
+可使用微软aka服务访问最新的下载页面
+
+    http://www.aka.ms/vcpython27
+
 ## mysql-python
 
 windows上直接用pip安装不成功的可能性较大，在windows上使用pip安装的过程中需要用到c++编译器，所以需要安装Microsoft Visual C++ Compiler for Python。
