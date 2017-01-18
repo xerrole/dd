@@ -105,7 +105,7 @@ windows下`%HOMEPATH%\.ipython\profile_default\startup\start.py`
 
 可使用微软aka服务访问最新的下载页面
 
-    <http://www.aka.ms/vcpython27>
+<http://www.aka.ms/vcpython27>
 
 ## mysql-python
 
