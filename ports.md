@@ -1,3 +1,5 @@
+[Ref](http://shanblue.iteye.com/blog/1732700)
+
 # elasticsearch
 
     elasticsearch: 9200
