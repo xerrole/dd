@@ -13,3 +13,7 @@
     }, 5000);
     }
     setTimeout(setIframeSrc, 5000);
+
+# output chinese to windows console
+
+    | iconv -f utf-8
