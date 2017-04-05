@@ -138,3 +138,19 @@ VC for python2.7:
 mysql-python在pip下安装不成功的话可以试试用easy_intall安装
     
     easy_install MySQL-python
+
+## ubuntu 12.04 LTS, install pip [Ref](https://www.liquidweb.com/kb/how-to-install-pip-on-ubuntu-12-04-lts/)
+
+There are two methods to install pip on ubuntu 12.04 LTS.
+If you meet `Package python-pip is not available, but is referred to by another package.` with method one,
+please try to install with python script of method two.
+
+1. Install pip with apt-get
+
+        apt-get update
+        apt-get install python-pip
+
+2. Install pip with curl and python
+
+        curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+        python get-pip.py
