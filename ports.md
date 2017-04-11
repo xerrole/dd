@@ -28,6 +28,6 @@ non-ssl
 
 ssl
 
-    smtps: 465
+    smtps: 465, 587
     pop3s: 995
     imaps: 993
