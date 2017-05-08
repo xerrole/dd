@@ -65,3 +65,35 @@ Way to solve the problem:
 
     python manage.py runserver --sub-logdir=instance1-folder
     python manage.py runserver --sub-logdir=instance2-folder
+
+# Converting string--bytes in different languages
+
+Here shows the difference through how to create an image file from a base64 formatting string.
+
+## python
+
+    from StringIO import StringIO
+    from base64 import decodingstring
+    from PIL import Image  # pillow
+
+    b64_str = '<base64 format string>'
+    try:
+        # python2
+        img_str = decodingstring(b64_str)
+    except TypeError:
+        # python3.x
+        # Calling encode() to convert to a bytes object first.
+        img_str = decodingstring(b64_str.encode())
+    img = Image.open(StringIO(img_str))
+    img.save('foo.png')
+
+## csharp
+
+	using System;
+	using System.Drawing;
+    using System.IO;
+
+	string b64Str = "<base64 format string>";
+	byte[] imgBytes = Convert.FromBase64String(b64Str);
+	Image img = Image.FromStream(new MemoryStream(imgBytes));
+	img.Save("foo.png");

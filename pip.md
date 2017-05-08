@@ -47,6 +47,14 @@ python分布式任务队列，可配合django或者RabbitMq使用。配合django
         js_obj = '{x: 1, y: 2, z: 3}'
         py_obj = demjson.decode(js_obj)
 
+## prettytable
+
+在repl中打印完美表格。
+
+## pyexecjs
+
+在python中调用javascript
+
 # 新奇用法
 
 ## pip 源配置
