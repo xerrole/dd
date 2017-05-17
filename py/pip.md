@@ -162,3 +162,9 @@ please try to install with python script of method two.
 
         curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
         python get-pip.py
+
+## Install pywin32
+
+安装介绍：http://blog.csdn.net/qq_34369025/article/details/53687900
+
+包下载：https://sourceforge.net/projects/pywin32/files/pywin32/
