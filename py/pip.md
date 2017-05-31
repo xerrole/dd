@@ -55,6 +55,10 @@ python分布式任务队列，可配合django或者RabbitMq使用。配合django
 
 在python中调用javascript
 
+One of cons of PyExecJS is performance. PyExecJS communicate JavaScript runtime by text and it is slow. The other cons is that it does not fully support runtime specific features.
+
+PyV8 might be better choice for some use case.
+
 # 新奇用法
 
 ## pip 源配置
