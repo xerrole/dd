@@ -97,3 +97,44 @@ Here shows the difference through how to create an image file from a base64 form
 	byte[] imgBytes = Convert.FromBase64String(b64Str);
 	Image img = Image.FromStream(new MemoryStream(imgBytes));
 	img.Save("foo.png");
+
+# Extends django models in the non-models-owner-app
+
+In order by reduce coupling, we can define models in app fooapp_a and extends
+the models in another app named fooapp_b. Suppose we have a project like this.
+
+    django-project
+    - fooapp_a
+      - models.py
+      - views.py
+    - fooapp_b
+      - extends.py
+      - views.py
+
+**Here is the implement of the extension**
+
+fooapp_a/models.py
+
+    class Person(<django_models.Model>):
+        name = models.CharField()
+        age = models.IntegerField()
+
+fooapp_b/models.py
+
+    from fooapp_a.models import Person
+
+    @ext(Persion)
+    def tell_age(person):
+        return 'My name is %s, and my age is %d' % (person.name, person.age)
+
+**In the source above we used a decorator to extend the models.**
+
+    def ext(model, attr_name=None):
+        def _ext(func):
+            name = attr_name if attr_name else func.__name__
+            if getattr(model, name, None):
+                raise AttributeError(
+                    "Model '%s' already has attribute '%s'" % (model.__name__, name)
+                )
+            setattr(model, name, func)
+        return _ext
