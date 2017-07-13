@@ -108,6 +108,8 @@ the models in another app named fooapp_b. Suppose we have a project like this.
       - models.py
       - views.py
     - fooapp_b
+      - __init__.py
+      - apps.py
       - extends.py
       - views.py
 
@@ -119,13 +121,33 @@ fooapp_a/models.py
         name = models.CharField()
         age = models.IntegerField()
 
-fooapp_b/models.py
+fooapp_b/
 
+    #
+    # models.py
+    #
     from fooapp_a.models import Person
 
     @ext(Persion)
     def tell_age(person):
         return 'My name is %s, and my age is %d' % (person.name, person.age)
+
+    #
+    # apps.py
+    #
+    from django.apps import AppConfig
+
+    class FooappbConfig(AppConfig):
+        name = 'fooapp_b'
+
+        def ready(self):
+            import ecosys.signals
+            import ecosys.userprofile_telegraph
+
+    #
+    # __init__.py
+    #
+    default_app_config = 'fooapp_b.apps.FooappbConfig'
 
 **In the source above we used a decorator to extend the models.**
 
