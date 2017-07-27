@@ -1,6 +1,6 @@
 # 常用包
 
-## pipdeptree, yolk/yolk3k, httpie, django-mail-queue
+## pipdeptree, yolk/yolk3k, httpie, django-mail-queue, djangorestframework
 
 ## selenium
 
